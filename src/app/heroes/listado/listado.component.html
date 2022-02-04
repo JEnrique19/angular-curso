@@ -1,0 +1,16 @@
+<h1>Los vengadores</h1>
+
+<div *ngIf="vengadorBorrado; else noBorrado">
+    <h3>Heroe borrado <small>{{vengadorBorrado}}</small></h3>
+</div>
+
+<ng-template #noBorrado>
+    <h3>No se ha borrado nada</h3>
+</ng-template>
+
+<button (click)="borrarVengador()">Borrar</button>
+<ul>
+    <li *ngFor="let av of avengers; let i = index">
+        {{i+1}} {{av}}
+    </li>
+</ul>
